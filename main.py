@@ -35,7 +35,7 @@ model = tf.keras.models.Sequential([
 model.compile(
     optimizer=tf.keras.optimizers.Adam(0.001),
     loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-    metrics=[tf.keras.metrics.SparseCategoricalCrossentropy()],
+    metrics=['accuracy'],
 )
 
 model.fit(
