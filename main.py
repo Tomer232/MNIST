@@ -43,3 +43,8 @@ model.fit(
     epochs=6,
     validation_data=ds_test,
 )
+
+model.save('mnist_model.h5')
+print("Model saved as 'mnist_model.h5")
+
+
