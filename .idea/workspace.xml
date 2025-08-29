@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae777a8-c261-4afe-90b2-0117b157ff5d" name="Changes" comment="code updates">
+    <list default="true" id="dae777a8-c261-4afe-90b2-0117b157ff5d" name="Changes" comment="confidance '%' fix to show values up to 100%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/digit_drawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/digit_drawer.py" afterDir="false" />
     </list>
@@ -192,7 +192,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1756478328751</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL‎-00016" summary="confidance '%' fix to show values up to 100%">
+      <option name="closed" value="true" />
+      <created>1756478554524</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL‎-00016" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1756478554524</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -210,6 +218,7 @@
     <MESSAGE value="added more visuals" />
     <MESSAGE value="added prediction function" />
     <MESSAGE value="code updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="code updates" />
+    <MESSAGE value="confidance '%' fix to show values up to 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="confidance '%' fix to show values up to 100%" />
   </component>
 </project>

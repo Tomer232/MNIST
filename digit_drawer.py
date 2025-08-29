@@ -11,6 +11,11 @@ CANVAS_Y = 35
 PREDICTION_X = 310
 PREDICTION_Y = 50
 
+CLEAR_BUTTON_X = PREDICTION_X + 10
+CLEAR_BUTTON_Y = PREDICTION_Y + 220
+CLEAR_BUTTON_WIDTH = 80
+CLEAR_BUTTON_HEIGHT = 30
+
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 GRAY = (128, 128, 128)
@@ -31,7 +36,7 @@ print("Model loaded successfully")
 def predict_digit(canvas_surface):
     canvas_array = pygame.surfarray.array3d(canvas_surface)
     canvas_array = np.transpose(canvas_array, (1, 0, 2))
-    gray_array = np.dot(canvas_array[...,:3], [0.299, 0.587, 0.114])
+    gray_array = np.dot(canvas_array[..., :3], [0.299, 0.587, 0.114])
 
     img = Image.fromarray(gray_array.astype('uint8'))
     img = img.resize((28, 28), Image.Resampling.LANCZOS)
@@ -68,6 +73,10 @@ while running:
                 if (CANVAS_X <= mouse_x <= CANVAS_X + CANVAS_SIZE and CANVAS_Y <= mouse_y <= CANVAS_Y + CANVAS_SIZE):
                     drawing = True
                     prev_pos = (mouse_x - CANVAS_X, mouse_y - CANVAS_Y)
+                elif CLEAR_BUTTON_X <= mouse_x <= CLEAR_BUTTON_X + CLEAR_BUTTON_WIDTH and CLEAR_BUTTON_Y <= mouse_y <= CLEAR_BUTTON_Y + CLEAR_BUTTON_HEIGHT:
+                    canvas.fill(BLACK)
+                    current_prediction = "?"
+                    current_confidence = "0.0%"
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
                 drawing = False
@@ -104,6 +113,13 @@ while running:
 
     confidence_display = font_medium.render(current_confidence, True, BLACK)
     screen.blit(confidence_display, (PREDICTION_X + 80, PREDICTION_Y + 155))
+
+    pygame.draw.rect(screen, GRAY, (CLEAR_BUTTON_X, CLEAR_BUTTON_Y, CLEAR_BUTTON_WIDTH, CLEAR_BUTTON_HEIGHT))
+    pygame.draw.rect(screen, BLACK, (CLEAR_BUTTON_X, CLEAR_BUTTON_Y, CLEAR_BUTTON_WIDTH, CLEAR_BUTTON_HEIGHT), 2)
+    clear_text = font_small.render("Clear", True, BLACK)
+    text_rect = clear_text.get_rect(
+        center=(CLEAR_BUTTON_X + CLEAR_BUTTON_WIDTH // 2, CLEAR_BUTTON_Y + CLEAR_BUTTON_HEIGHT // 2))
+    screen.blit(clear_text, text_rect)
 
     pygame.display.flip()
     clock.tick(60)
