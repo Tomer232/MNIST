@@ -35,6 +35,22 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1:
+                mouse_x, mouse_y = event.pos
+                if(CANVAS_X <= mouse_x <= CANVAS_X + CANVAS_SIZE and CANVAS_Y <= mouse_y <= CANVAS_Y + CANVAS_SIZE):
+                    drawing = True
+        elif event.type == pygame.MOUSEBUTTONUP:
+            if event.button == 1:
+                drawing = False
+        elif event.type == pygame.MOUSEMOTION:
+            if drawing:
+                mouse_x, mouse_y = event.pos
+                canvas_x = mouse_x - CANVAS_X
+                canvas_y = mouse_y - CANVAS_Y
+
+                if 0 <= canvas_x < CANVAS_SIZE and 0 <= canvas_y < CANVAS_SIZE:
+                    pygame.draw.circle(canvas, WHITE, (canvas_x, canvas_y), 8)
 
     screen.fill(WHITE)
     pygame.draw.rect(screen, BLACK, (CANVAS_X-2, CANVAS_Y-2, CANVAS_SIZE+4, CANVAS_SIZE+4), 2)
