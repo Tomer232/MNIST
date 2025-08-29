@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae777a8-c261-4afe-90b2-0117b157ff5d" name="Changes" comment="updated drwaing section to handle fast moving mouse while pressed.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="dae777a8-c261-4afe-90b2-0117b157ff5d" name="Changes" comment="added more visuals">
       <change beforePath="$PROJECT_DIR$/digit_drawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/digit_drawer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +167,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1756476909868</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL‎-00013" summary="added more visuals">
+      <option name="closed" value="true" />
+      <created>1756477517105</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL‎-00013" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1756477517105</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -183,6 +190,7 @@
     <MESSAGE value="adding main loop game" />
     <MESSAGE value="added mouse drawing" />
     <MESSAGE value="updated drwaing section to handle fast moving mouse while pressed." />
-    <option name="LAST_COMMIT_MESSAGE" value="updated drwaing section to handle fast moving mouse while pressed." />
+    <MESSAGE value="added more visuals" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more visuals" />
   </component>
 </project>

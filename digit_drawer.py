@@ -27,11 +27,33 @@ print("Loading model...")
 model = tf.keras.models.load_model('mnist_model.h5')
 print("Model loaded successfully")
 
+
+def predict_digit(canvas_surface):
+    canvas_array = pygame.surfarray.array3d(canvas_surface)
+    canvas_array = np.transpose(canvas_array, (1, 0, 2))
+    gray_array = np.dot(canvas_array[...,:3], [0.299, 0.587, 0.114])
+
+    img = Image.fromarray(gray_array.astype('uint8'))
+    img = img.resize((28,28), Image.Resampling.LANCZOS)
+
+    img_array = np.array(img) / 255.0
+    img_array = img_array.reshape(1, 28, 28)
+
+    predictions = model.predict(img_array, verbose=0)
+    predicted_digit = np.argmax(predictions[0])
+    confidence = np.max(predictions[0]) * 100
+
+    return predicted_digit, confidence
+
+
 canvas = pygame.Surface((CANVAS_SIZE, CANVAS_SIZE))
 canvas.fill(BLACK)
 
 drawing = False
 clock = pygame.time.Clock()
+
+current_predictions = "?"
+current_confidence = "0.0%"
 
 # main game loop
 running = True
