@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae777a8-c261-4afe-90b2-0117b157ff5d" name="Changes" comment="added prediction function">
+    <list default="true" id="dae777a8-c261-4afe-90b2-0117b157ff5d" name="Changes" comment="code updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/digit_drawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/digit_drawer.py" afterDir="false" />
     </list>
@@ -184,7 +184,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1756478045978</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL‎-00015" summary="code updates">
+      <option name="closed" value="true" />
+      <created>1756478328751</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL‎-00015" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1756478328751</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -201,6 +209,7 @@
     <MESSAGE value="updated drwaing section to handle fast moving mouse while pressed." />
     <MESSAGE value="added more visuals" />
     <MESSAGE value="added prediction function" />
-    <option name="LAST_COMMIT_MESSAGE" value="added prediction function" />
+    <MESSAGE value="code updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="code updates" />
   </component>
 </project>
