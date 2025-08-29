@@ -40,6 +40,7 @@ while running:
                 mouse_x, mouse_y = event.pos
                 if(CANVAS_X <= mouse_x <= CANVAS_X + CANVAS_SIZE and CANVAS_Y <= mouse_y <= CANVAS_Y + CANVAS_SIZE):
                     drawing = True
+                    prev_pos = (mouse_x - CANVAS_X, mouse_y - CANVAS_Y)
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
                 drawing = False
@@ -50,7 +51,11 @@ while running:
                 canvas_y = mouse_y - CANVAS_Y
 
                 if 0 <= canvas_x < CANVAS_SIZE and 0 <= canvas_y < CANVAS_SIZE:
-                    pygame.draw.circle(canvas, WHITE, (canvas_x, canvas_y), 8)
+                    if 'prev_pos' in locals():
+                        pygame.draw.line(canvas, WHITE, prev_pos, (canvas_x, canvas_y), 16)
+                    else:
+                        pygame.draw.circle(canvas, WHITE, (canvas_x, canvas_y), 8)
+                    prev_pos = (canvas_x, canvas_y)
 
     screen.fill(WHITE)
     pygame.draw.rect(screen, BLACK, (CANVAS_X-2, CANVAS_Y-2, CANVAS_SIZE+4, CANVAS_SIZE+4), 2)
