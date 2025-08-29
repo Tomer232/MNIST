@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae777a8-c261-4afe-90b2-0117b157ff5d" name="Changes" comment="constants for drwing window.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="dae777a8-c261-4afe-90b2-0117b157ff5d" name="Changes" comment="init the game">
       <change beforePath="$PROJECT_DIR$/digit_drawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/digit_drawer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +135,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1756475577069</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎-00009" summary="init the game">
+      <option name="closed" value="true" />
+      <created>1756475908116</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1756475908116</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -147,6 +154,7 @@
     <MESSAGE value="changes the 'metrics' to show accuracy" />
     <MESSAGE value="saved the model as 'mnist_model.h5'" />
     <MESSAGE value="constants for drwing window." />
-    <option name="LAST_COMMIT_MESSAGE" value="constants for drwing window." />
+    <MESSAGE value="init the game" />
+    <option name="LAST_COMMIT_MESSAGE" value="init the game" />
   </component>
 </project>

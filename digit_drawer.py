@@ -29,4 +29,18 @@ canvas.fill(BLACK)
 drawing = False
 clock = pygame.time.Clock()
 
+# main game loop
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill(WHITE)
+    pygame.draw.rect(screen, BLACK, (CANVAS_X-2, CANVAS_Y-2, CANVAS_SIZE+4, CANVAS_SIZE+4), 2)
+    screen.blit(canvas, (CANVAS_X, CANVAS_Y))
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
 
