@@ -70,6 +70,9 @@ while running:
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
                 drawing = False
+                pred_digit, confidence = predict_digit(canvas)
+                current_predictions = str(pred_digit)
+                current_confidence = f"{confidence:.1f}%"
         elif event.type == pygame.MOUSEMOTION:
             if drawing:
                 mouse_x, mouse_y = event.pos
@@ -95,10 +98,10 @@ while running:
     conf_text = font_small.render("confidence:", True, BLACK)
     screen.blit(conf_text, (PREDICTION_X + 10, PREDICTION_Y + 130))
 
-    digit_display = font_large.render("?", True, BLACK)
+    digit_display = font_large.render(current_predictions, True, BLACK)
     screen.blit(digit_display, (PREDICTION_X + 80, PREDICTION_Y + 35))
 
-    confidence_display = font_medium.render("0.0%", True, BLACK)
+    confidence_display = font_medium.render(current_confidence, True, BLACK)
     screen.blit(confidence_display, (PREDICTION_X + 80, PREDICTION_Y + 155))
 
     pygame.display.flip()
