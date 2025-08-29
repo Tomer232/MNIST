@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae777a8-c261-4afe-90b2-0117b157ff5d" name="Changes" comment="added a clear button">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/digit_drawer.py" beforeDir="false" afterPath="$PROJECT_DIR$/digit_drawer.py" afterDir="false" />
+    <list default="true" id="dae777a8-c261-4afe-90b2-0117b157ff5d" name="Changes" comment="bug fixes">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +207,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1756479156085</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL‎-00018" summary="bug fixes">
+      <option name="closed" value="true" />
+      <created>1756479977415</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL‎-00018" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1756479977415</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -228,6 +235,7 @@
     <MESSAGE value="code updates" />
     <MESSAGE value="confidance '%' fix to show values up to 100%" />
     <MESSAGE value="added a clear button" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a clear button" />
+    <MESSAGE value="bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fixes" />
   </component>
 </project>
