@@ -19,6 +19,10 @@ pygame.init()
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("MNIST Digit Recognizer")
 
+font_large = pygame.font.Font(None, 72)
+font_medium = pygame.font.Font(None, 36)
+font_small = pygame.font.Font(None, 24)
+
 print("Loading model...")
 model = tf.keras.models.load_model('mnist_model.h5')
 print("Model loaded successfully")
@@ -38,7 +42,7 @@ while running:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 mouse_x, mouse_y = event.pos
-                if(CANVAS_X <= mouse_x <= CANVAS_X + CANVAS_SIZE and CANVAS_Y <= mouse_y <= CANVAS_Y + CANVAS_SIZE):
+                if (CANVAS_X <= mouse_x <= CANVAS_X + CANVAS_SIZE and CANVAS_Y <= mouse_y <= CANVAS_Y + CANVAS_SIZE):
                     drawing = True
                     prev_pos = (mouse_x - CANVAS_X, mouse_y - CANVAS_Y)
         elif event.type == pygame.MOUSEBUTTONUP:
@@ -58,10 +62,24 @@ while running:
                     prev_pos = (canvas_x, canvas_y)
 
     screen.fill(WHITE)
-    pygame.draw.rect(screen, BLACK, (CANVAS_X-2, CANVAS_Y-2, CANVAS_SIZE+4, CANVAS_SIZE+4), 2)
+    pygame.draw.rect(screen, BLACK, (CANVAS_X - 2, CANVAS_Y - 2, CANVAS_SIZE + 4, CANVAS_SIZE + 4), 2)
     screen.blit(canvas, (CANVAS_X, CANVAS_Y))
+
+    pygame.draw.rect(screen, GRAY, (PREDICTION_X, PREDICTION_Y, 180, 100), 2)
+    prediction_text = font_small.render("Predicted Digit:", True, BLACK)
+    screen.blit(prediction_text, (PREDICTION_X + 10, PREDICTION_Y + 10))
+
+    pygame.draw.rect(screen, GRAY, (PREDICTION_X, PREDICTION_Y + 120, 180, 80), 2)
+    conf_text = font_small.render("confidence:", True, BLACK)
+    screen.blit(conf_text, (PREDICTION_X + 10, PREDICTION_Y + 130))
+
+    digit_display = font_large.render("?", True, BLACK)
+    screen.blit(digit_display, (PREDICTION_X + 80, PREDICTION_Y + 35))
+
+    confidence_display = font_medium.render("0.0%", True, BLACK)
+    screen.blit(confidence_display, (PREDICTION_X + 80, PREDICTION_Y + 155))
+
     pygame.display.flip()
     clock.tick(60)
 
 pygame.quit()
-
