@@ -58,7 +58,7 @@ canvas.fill(BLACK)
 drawing = False
 clock = pygame.time.Clock()
 
-current_predictions = "?"
+current_prediction = "?"
 current_confidence = "0.0%"
 
 # main game loop
@@ -70,7 +70,7 @@ while running:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 mouse_x, mouse_y = event.pos
-                if (CANVAS_X <= mouse_x <= CANVAS_X + CANVAS_SIZE and CANVAS_Y <= mouse_y <= CANVAS_Y + CANVAS_SIZE):
+                if CANVAS_X <= mouse_x <= CANVAS_X + CANVAS_SIZE and CANVAS_Y <= mouse_y <= CANVAS_Y + CANVAS_SIZE:
                     drawing = True
                     prev_pos = (mouse_x - CANVAS_X, mouse_y - CANVAS_Y)
                 elif CLEAR_BUTTON_X <= mouse_x <= CLEAR_BUTTON_X + CLEAR_BUTTON_WIDTH and CLEAR_BUTTON_Y <= mouse_y <= CLEAR_BUTTON_Y + CLEAR_BUTTON_HEIGHT:
@@ -80,9 +80,14 @@ while running:
         elif event.type == pygame.MOUSEBUTTONUP:
             if event.button == 1:
                 drawing = False
-                pred_digit, confidence = predict_digit(canvas)
-                current_predictions = str(pred_digit)
-                current_confidence = f"{confidence:.1f}%"
+                canvas_array = pygame.surfarray.array3d(canvas)
+                if np.any(canvas_array > 0):
+                    pred_digit, confidence = predict_digit(canvas)
+                    current_prediction = str(pred_digit)
+                    current_confidence = f"{confidence:.1f}%"
+                else:
+                    current_prediction = "?"
+                    current_confidence = "0.0%"
         elif event.type == pygame.MOUSEMOTION:
             if drawing:
                 mouse_x, mouse_y = event.pos
@@ -108,7 +113,7 @@ while running:
     conf_text = font_small.render("confidence:", True, BLACK)
     screen.blit(conf_text, (PREDICTION_X + 10, PREDICTION_Y + 130))
 
-    digit_display = font_large.render(current_predictions, True, BLACK)
+    digit_display = font_large.render(current_prediction, True, BLACK)
     screen.blit(digit_display, (PREDICTION_X + 80, PREDICTION_Y + 35))
 
     confidence_display = font_medium.render(current_confidence, True, BLACK)
